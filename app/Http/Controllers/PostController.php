@@ -35,7 +35,7 @@ class PostController extends Controller
         return view('edit-post', ['post' => $post]);
     }
     
-    public function createPost(Request $req){
+    public function createPost(Request $req,){
         $data = $req->validate([
             'title' => 'required',
             'body' => 'required'
@@ -47,4 +47,5 @@ class PostController extends Controller
         Post::create($data);
         return redirect('/');
     }
+
 }

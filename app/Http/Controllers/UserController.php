@@ -17,6 +17,7 @@ class UserController extends Controller
         if (auth()->attempt([
             'name' => $data['name'], 
             'password' => $data['password']])) {
+                
                 $req->session()->regenerate();
             }            
             return redirect('/');
